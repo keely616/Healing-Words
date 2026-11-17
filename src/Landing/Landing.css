@@ -1,0 +1,134 @@
+.landing {
+    background-color: #e7ded1;
+    border-radius: 25px;
+    margin: 10vh 4vw 1vh 4vw;
+    padding: 2vw;
+    height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-content{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+}
+
+.landing-item{
+    display:flex;
+    justify-content: center;
+    width: 50%;
+}
+
+h2, h3{
+    font-family: 'Cormorant Garamond', serif;
+}
+
+p.landing-msg{
+    font-size: 16px;
+}
+
+p, button{
+    font-family: 'Mooli', serif;
+}
+
+.brown-heading{
+    color:#2b2929;
+}
+
+.green-heading{
+    color:#587147;
+}
+
+.brown-heading, .green-heading{
+    font-size: 45px;
+}
+
+.landing-msg{
+    /* flex: 0 0 450px; */
+    /* margin: clamp(5px, 50px, 500px) */
+    width:50%;
+}
+
+.green-btn{
+    height: 40px;
+    font-size: 18px;
+    color: #eeeeee;
+    background-color: #775f4f;
+    border-radius: 15px;
+    border-color: #2b2929;
+}
+
+.btn-div{
+    margin-top: 35px; /* Not working ?*/
+}
+
+.plant-preview{
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    border: 2.5px solid #2b2929;
+    width:50%;
+
+    /* flex: 0 0 300px; */
+    /* margin: clamp(5px, 50px, 500px) */
+}
+
+.plant-img {
+    height: 300px;
+
+}
+
+  /* @media screen and (max-width: 998px) {
+
+    .landing {
+        height: auto;
+        margin: 4vh 3vw 2vh;
+        padding: 3vh 4vw;
+    }
+
+    .landing-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .plant-preview {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
+    }
+
+    .landing-msg {
+        flex: none;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .brown-heading,
+    .green-heading {
+        font-size: 32px;
+    }
+
+    .plant-img {
+        max-width: 100%;
+    }
+
+}   */
+
+
+
+
+
+
+
+
+
+

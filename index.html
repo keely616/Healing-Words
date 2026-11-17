@@ -1,25 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homepage.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Mooli&display=swap" rel="stylesheet">
     <title>Healing Words</title>
-    <style>
-        p {
-          background-image: "/assests/background.png";
-        }
-    </style>
-</head>
-<body>
-    <h1>Healing Words</h1>
-
-    <p>Start watering your plants with your words!</p>
-    <button id ="startRecordBtn">Water Your Plant</button>
-    <p>Transcription:</p>
-    <div id ="transcriptionBox" class="displayBox"></div>
-    <p>The impact of your words:</p>
-    <div id="resultBox" class="displayBox"></div>
-    <script src="index.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

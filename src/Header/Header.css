@@ -1,0 +1,41 @@
+
+nav li{
+    list-style: none;
+    display: inline-block;
+}
+
+nav li a {
+    font-family: 'Mooli', serif; 
+    font-size: 18px;
+    font-weight: bold;
+    color: #eeeeee;
+    margin-right: 25px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+
+.nav-bar{
+    background-color: #a4835c;
+    padding-right: 15px; /* make this a percentage */
+    padding-left: 15px; /* make this a percentage */
+    top:0;
+    position: fixed;
+    width:100%;
+}
+
+.menu-container {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-title a{
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 35px;
+    font-weight: 600;
+    color: #eeeeee;
+}
+
