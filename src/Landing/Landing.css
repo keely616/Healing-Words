@@ -17,11 +17,11 @@
     gap: 40px;
 }
 
-.landing-item{
+/* .landing-item{
     display:flex;
     justify-content: center;
-    width: 50%;
-}
+    width: 40%;
+} */
 
 h2, h3{
     font-family: 'Cormorant Garamond', serif;
@@ -48,9 +48,9 @@ p, button{
 }
 
 .landing-msg{
-    /* flex: 0 0 450px; */
-    /* margin: clamp(5px, 50px, 500px) */
-    width:50%;
+    flex: 0 0 450px; 
+    /* margin: clamp(5px, 50px, 500px)
+    /* width:60%; */
 }
 
 .green-btn{
@@ -74,10 +74,10 @@ p, button{
     align-items: center;
     border-radius: 25px;
     border: 2.5px solid #2b2929;
-    width:50%;
+    /* width:50%; */
 
-    /* flex: 0 0 300px; */
-    /* margin: clamp(5px, 50px, 500px) */
+    flex: 0 0 300px;
+    margin: clamp(5px, 50px, 500px)
 }
 
 .plant-img {
