@@ -21,18 +21,12 @@
     gap: 40px;
 }
 
-/* Each side takes half the width. 
-.landing-item{
+/* .landing-item{
     display:flex;
     justify-content: center;
     width: 40%;
 } */
 
-/* ---------- text ---------- */
-
-/* NOTE: h2/h3/p/button rules here apply to the whole site, not just this page. */
-
-/* Headings use the serif display font. */
 h2, h3{
     font-family: 'Cormorant Garamond', serif;
 }
@@ -66,9 +60,9 @@ p, button{
 
 /* Text block with the headline, intro and button. */
 .landing-msg{
-    /* flex: 0 0 450px; */
-    /* margin: clamp(5px, 50px, 500px) */
-    width:50%;
+    flex: 0 0 450px; 
+    /* margin: clamp(5px, 50px, 500px)
+    /* width:60%; */
 }
 
 /* "Begin Session" button. */
@@ -97,10 +91,10 @@ p, button{
     align-items: center;
     border-radius: 25px;
     border: 2.5px solid #2b2929;
-    width:50%;
+    /* width:50%; */
 
-    /* flex: 0 0 300px; */
-    /* margin: clamp(5px, 50px, 500px) */
+    flex: 0 0 300px;
+    margin: clamp(5px, 50px, 500px)
 }
 
 /* Sunflower image, fixed at 300px tall. */

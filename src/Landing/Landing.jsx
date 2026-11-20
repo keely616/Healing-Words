@@ -6,7 +6,10 @@ import "./Landing.css";
 function Landing (){
     return(
         <main className = "landing">
-            <div className = "landing-content">
+            <PlantPreview/>
+            <LandingMssg/>
+
+            {/* <div className = "landing-content">
                 <div className = "landing-item">
                     <PlantPreview/>
                 </div>
@@ -14,7 +17,7 @@ function Landing (){
                     <LandingMssg/>
                 </div>
             </div>
-            
+             */}
             
         </main>
     );
