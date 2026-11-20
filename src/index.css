@@ -1,4 +1,6 @@
+/* Global styles shared by every page. */
 
+/* Page background: one image that stays fixed and fills the screen. */
 :root{
   background-image: url("./assets/background.png");
   background-size: cover;
@@ -7,6 +9,7 @@
   background-position: center;
 }
 
+/* Remove the browser's default page margin. */
 body {
   margin: 0;
   padding: 0;

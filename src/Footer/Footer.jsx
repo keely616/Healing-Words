@@ -1,5 +1,6 @@
 import "./Footer.css";
 
+// Copyright line; the year updates automatically.
 function Footer() {
     return (
         <footer>

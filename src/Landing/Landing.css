@@ -1,3 +1,6 @@
+/* ---------- layout ---------- */
+
+/* Large beige card that holds the whole landing page. */
 .landing {
     background-color: #e7ded1;
     border-radius: 25px;
@@ -9,6 +12,7 @@
     justify-content: center;
 }
 
+/* Puts the plant card and the message side by side. */
 .landing-content{
     display:flex;
     align-items: center;
@@ -27,32 +31,41 @@ h2, h3{
     font-family: 'Cormorant Garamond', serif;
 }
 
+/* NOTE: nothing matches this selector (.landing-msg is an <article>, not a <p>). */
 p.landing-msg{
     font-size: 16px;
 }
 
+/* Body text and buttons use the Mooli font. */
 p, button{
     font-family: 'Mooli', serif;
 }
 
+/* First heading line: dark brown. */
 .brown-heading{
     color:#2b2929;
 }
 
+/* Second heading line: green. */
 .green-heading{
     color:#587147;
 }
 
+/* Both heading lines share the same size. */
 .brown-heading, .green-heading{
     font-size: 45px;
 }
 
+/* ---------- message and button ---------- */
+
+/* Text block with the headline, intro and button. */
 .landing-msg{
     flex: 0 0 450px; 
     /* margin: clamp(5px, 50px, 500px)
     /* width:60%; */
 }
 
+/* "Begin Session" button. */
 .green-btn{
     height: 40px;
     font-size: 18px;
@@ -62,10 +75,14 @@ p, button{
     border-color: #2b2929;
 }
 
+/* NOTE: the markup uses "btn-dv" (no "i"), so this spacing is never applied. */
 .btn-div{
     margin-top: 35px; /* Not working ?*/
 }
 
+/* ---------- plant preview ---------- */
+
+/* White card with a dark border that holds the plant image. */
 .plant-preview{
     background-color: #eeeeee;
     display: flex;
@@ -80,11 +97,14 @@ p, button{
     margin: clamp(5px, 50px, 500px)
 }
 
+/* Sunflower image, fixed at 300px tall. */
 .plant-img {
     height: 300px;
 
 }
 
+  /* Disabled: mobile layout (stacks the sections vertically below 998px).
+     Left commented out until the page is made responsive. */
   /* @media screen and (max-width: 998px) {
 
     .landing {
