@@ -1,0 +1,282 @@
+/* Fonts used only by the Listening page */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Reenie+Beanie&family=Space+Mono:wght@400;700&display=swap");
+
+/* Everything is scoped under .lp so it never touches the Landing page. */
+
+/* ---------- page wrapper ---------- */
+
+/* Defines the page colours (used as var(--name) below) and centres the content. */
+.lp {
+    --sage: #8da48e;
+    --mint: #c9d9c1;
+    --burnt-sienna: #a35d47;
+    --mustard-gold: #d4a34d;
+    --paper-creme: #f2ede4;
+    --ink: #2a3b2a;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 96px 48px 48px; /* top clears the fixed nav bar */
+    font-family: 'EB Garamond', serif;
+    color: var(--ink);
+}
+
+/* Small reset, limited to this page: padding counts inside element sizes... */
+.lp *, .lp *::before, .lp *::after { box-sizing: border-box; }
+/* ...no default text margins... */
+.lp h1, .lp h3, .lp p { margin: 0; }
+/* ...buttons start unstyled (the button classes below style them)... */
+.lp button { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: inherit; }
+/* ...images and icons sit on their own line (removes a small gap under them). */
+.lp img, .lp svg { display: block; }
+/* Size of the icons inside the buttons. */
+.lp .icon { width: 20px; height: 20px; }
+
+/* Soft watercolour wash over the shared site background */
+.lp .watercolor-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(141, 164, 142, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 90% 90%, rgba(201, 217, 193, 0.3) 0%, transparent 60%);
+}
+
+/* Faint paper texture over the whole screen; clicks pass through it. */
+.lp .lp-grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.03;
+    z-index: 100;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+/* ---------- layout ---------- */
+
+/* 12-column grid: photo column (5) on the left, journal column (7) on the right. */
+.lp-main {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 77px;
+    align-items: center;
+}
+.lp-left { grid-column: span 5; position: relative; }
+.lp-right { grid-column: span 7; display: flex; flex-direction: column; gap: 32px; }
+
+/* ---------- type helpers ---------- */
+
+/* Handwritten look for notes and captions. */
+.lp .handwritten { font-family: 'Reenie Beanie', cursive; line-height: 1; }
+/* Typewriter look for labels and small text. */
+.lp .mono { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 1px; }
+
+/* ---------- decor ---------- */
+
+/* Strip of tape; clip-path gives it rough, torn edges. */
+.lp .washi-tape {
+    position: absolute;
+    background: rgba(212, 195, 153, 0.5);
+    backdrop-filter: blur(1px);
+    height: 24px;
+    width: 100px;
+    clip-path: polygon(2% 10%, 98% 5%, 100% 20%, 97% 85%, 95% 95%, 5% 90%, 0% 80%, 3% 15%);
+    z-index: 10;
+}
+/* Dark round pin; shading and shadow make it look 3D. */
+.lp .push-pin {
+    position: absolute;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #555, #111);
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.4);
+    z-index: 20;
+}
+
+/* ---------- polaroid ---------- */
+
+/* "Our little friend..." label, tilted and placed above the photo. */
+.lp .friend-note {
+    position: absolute;
+    top: -64px;
+    left: -16px;
+    font-size: 30px;
+    line-height: 36px;
+    transform: rotate(-8deg);
+    opacity: 0.7;
+}
+.lp .friend-arrow { display: inline-block; margin-left: 8px; vertical-align: middle; }
+
+/* Photo frame, slightly tilted; straightens out on hover. */
+.lp .polaroid {
+    background: var(--mustard-gold);
+    padding: 16px 16px 60px 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    transform: rotate(-3deg);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.lp .polaroid:hover { transform: rotate(0deg); }
+/* Photo area: fixed shape, image cropped to fit with a soft vintage tint. */
+.lp .polaroid-photo { width: 100%; aspect-ratio: 20 / 23; background: #f0f0f0; overflow: hidden; }
+.lp .polaroid-photo img { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.2) contrast(0.9); }
+/* Handwritten caption in the frame's bottom margin. */
+.lp .polaroid-caption { font-size: 36px; line-height: 40px; text-align: center; margin-top: 32px; color: rgba(0,0,0,0.7); }
+
+/* ---------- reminder ---------- */
+
+/* White sticky note overlapping the photo's bottom-right corner. */
+.lp .reminder-note {
+    position: absolute;
+    bottom: -64px;
+    right: -32px;
+    width: 192px;
+    padding: 16px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+    transform: rotate(6deg);
+    border: 1px solid #f3f4f6;
+}
+/* Tape centred on the top edge of the note. */
+.lp .reminder-tape { top: -12px; left: 50%; transform: translateX(-50%); width: 80px; }
+/* Small "REMINDER" label. */
+.lp .reminder-label { font-size: 9px; margin-bottom: 8px; }
+/* Main note text, with "be gentle" bold and underlined. */
+.lp .reminder-text { font-size: 24px; line-height: 1; }
+.lp .reminder-text span { font-weight: 700; text-decoration: underline; }
+
+/* ---------- journal card ---------- */
+
+/* Cream paper card that holds the title, growth panel and controls. */
+.lp .scrapbook-card {
+    position: relative;
+    padding: 56px;
+    border-radius: 2px;
+    background-color: #FAF3DC;
+    background-image: url('https://www.transparenttextures.com/patterns/p6.png');
+    box-shadow: 2px 5px 25px rgba(0,0,0,0.15);
+}
+/* Card title area. */
+.lp .journal-header { margin-bottom: 48px; }
+/* Faded "ENTRY NO. 001" line above the title. */
+.lp .journal-entry { opacity: 0.5; margin-bottom: 8px; display: flex; justify-content: space-between; }
+.lp .journal-header h1 {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.25;
+}
+/* Controls and quote, stacked vertically. */
+.lp .journal-body { display: flex; flex-direction: column; gap: 40px; }
+/* Quote with a thin line on its left side. */
+.lp .journal-quote { border-left: 2px solid #e5e7eb; padding: 8px 0 8px 24px; }
+.lp .journal-quote p:first-child { font-family: 'EB Garamond', serif; font-size: 18px; font-style: italic; line-height: 1.625; opacity: 0.8; }
+/* Result message ("Your words gained 3 points"). min-height stops the card jumping when it appears. */
+.lp .quote-status { margin-top: 8px; opacity: 0.6; min-height: 1em; }
+
+/* ---------- growth panel ---------- */
+
+/* Reddish-brown panel holding the score and growth bar. */
+.lp .growth-panel {
+    position: relative;
+    padding: 32px;
+    margin-bottom: 48px;
+    border-radius: 2px;
+    background: var(--burnt-sienna);
+    color: #f2ede4;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.1);
+    transform: rotate(1deg);
+}
+/* Top row: "SEED GROWTH" on the left, score on the right, with a line below. */
+.lp .growth-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 16px; padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.lp .growth-title { font-size: 12px; line-height: 16px; font-weight: 700; text-transform: uppercase; }
+.lp .growth-score { font-size: 18px; line-height: 28px; font-weight: 700; }
+/* Bottom row: hint text on the left, "days of bloom" counter on the right. */
+.lp .growth-foot { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 12px; }
+.lp .growth-note { font-size: 24px; line-height: 32px; color: rgba(255,255,255,0.9); }
+.lp .growth-days { text-align: right; }
+.lp .growth-days span { font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; font-size: 36px; line-height: 40px; }
+.lp .growth-days p { font-size: 8px; line-height: 1.25; }
+
+/* Growth bar: 10 equal segments in a row. */
+.lp .segmented-bar {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    border: 1px solid rgba(255,255,255,0.4);
+    height: 32px;
+    background: rgba(0,0,0,0.1);
+    box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.05);
+}
+/* Each segment has a divider line (none after the last) and fades in when filled. */
+.lp .segmented-bar div { border-right: 1px solid rgba(255,255,255,0.2); transition: background-color 0.4s; }
+.lp .segmented-bar div:last-child { border-right: none; }
+/* A filled segment turns gold (class added by PlantProgressBar.jsx). */
+.lp .segmented-bar div.filled { background: var(--mustard-gold); }
+
+/* ---------- controls ---------- */
+
+/* Row holding the Start button and the pause/stop circles. */
+.lp .controls-row { display: flex; align-items: center; justify-content: center; gap: 24px; }
+/* Pause and stop circles, side by side. */
+.lp .circle-group { display: flex; gap: 12px; }
+
+/* "Start Listening" pill button with the mic icon. */
+.lp .mic-pill {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 32px;
+    border-radius: 999px;
+    background: var(--sage);
+    color: white;
+    box-shadow: 0 4px 10px rgba(141, 164, 142, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Hover effect: darker green and a small lift (skipped when disabled). */
+.lp .mic-pill:hover:not(:disabled) { background: #7a917b; transform: translateY(-2px); }
+.lp .mic-label { font-size: 12px; line-height: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* Round 48px icon button (pause and stop). */
+.lp .circle-control {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--sage);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(141, 164, 142, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Hover effect: grows slightly. */
+.lp .circle-control:hover:not(:disabled) { transform: scale(1.05); }
+/* Any disabled button looks faded and shows a "not allowed" cursor. */
+.lp button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ---------- footer row ---------- */
+
+/* Handwritten note on the left, links on the right. */
+.lp .lp-footer { display: flex; justify-content: space-between; align-items: center; padding: 0 16px; }
+.lp .lp-footer-note { font-size: 30px; line-height: 36px; opacity: 0.6; }
+.lp .lp-footer-nav { display: flex; gap: 24px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+/* Links match the text colour and are underlined only on hover. */
+.lp .lp-footer-nav a { color: inherit; text-decoration: none; }
+.lp .lp-footer-nav a:hover { text-decoration: underline; }
+
+/* ---------- small screens ---------- */
+
+/* Below 900px wide: stack everything in one column, photo first. */
+@media (max-width: 900px) {
+    .lp-main { grid-template-columns: 1fr; gap: 96px; }
+    .lp-left, .lp-right { grid-column: auto; }
+    .lp-left { max-width: 420px; margin: 64px auto 0; }
+}

@@ -1,4 +1,4 @@
-
+/* Strip along the bottom of the screen that holds the two leaf images. */
 .foliage-container {
     position: fixed;
     bottom: 0;
@@ -9,8 +9,10 @@
     display: flex;
     flex-wrap: nowrap;
     z-index: 2;
+    pointer-events: none; /* decorative only; must not block clicks on the page above it */
 }
 
+/* Each leaf image is a fixed 960px wide so the two sit side by side. */
 .foliage {
     width: 960px;
     height: 250px;
@@ -21,6 +23,7 @@
     max-width: none;
 }
 
+/* Flip the second image horizontally so the leaves face each other. */
 .mirrored {
     transform: scaleX(-1);
 }
